@@ -2,24 +2,24 @@
 ## 1 Environment Configuration
 ### 1.1 Device Connection
 * **Install USB Driver:**
-  The device use CP2104 for USB-UART bridge.
-  Download and install **CP210x Universal Windows Driver** or **CP210x VCP Mac OSX Driver** [here](https://www.silabs.com/developer-tools/usb-to-uart-bridge-vcp-drivers?tab=downloads).
-  **Reboot the computer.**
+  The device use CP2104 for USB-UART bridge.  
+  Download and install **CP210x Universal Windows Driver** or **CP210x VCP Mac OSX Driver** [here](https://www.silabs.com/developer-tools/usb-to-uart-bridge-vcp-drivers?tab=downloads).  
+  **Reboot the computer.**  
 
 * **Check Connection:**
   - **Windows**
-    Use **Micro USB** cable to connect the device to the computer. 
-    Open **Device Manager**, extend **Ports (COM & LPT)**, look for **Silicon Labs CP210x USB to UART Bridge (COMn)**, in which **COMn** is the COM port.
+    Use **Micro USB** cable to connect the device to the computer.  
+    Open **Device Manager**, extend **Ports (COM & LPT)**, look for **Silicon Labs CP210x USB to UART Bridge (COMn)**, in which **COMn** is the COM port.  
   - **MacOS**
-    **Disconnect** the device with the computer.
-    Open **Terminal**, run `ls /dev/tty.*`.
-    Use **Micro USB** cable to commect the device to the computer.
-    run `ls /dev/tty.*` again, look for new devices like **/dev/tty.SLAB_USBtoUART**, which is the COM port.
+    **Disconnect** the device with the computer.  
+    Open **Terminal**, run `ls /dev/tty.*`.  
+    Use **Micro USB** cable to commect the device to the computer.  
+    run `ls /dev/tty.*` again, look for new devices like **/dev/tty.SLAB_USBtoUART**, which is the COM port.  
   
 ### 1.2 Arduino IDE Configuration
 Install and open the Arduino IDE.
 * **Board Management:**
-  Open **File**->**Preferences**, find **Additional boards manager URLs**, add `https://adafruit.github.io/arduino-board-index/package_adafruit_index.json`.
+  Open **File**->**Preferences**, find **Additional boards manager URLs**, add `https://adafruit.github.io/arduino-board-index/package_adafruit_index.json`.  
   Open **BOARDS MANAGER** in the left slide, install the newest version of **Adafruit nRF52** by Adaruit.
 
 * **Library Management:**
@@ -104,7 +104,7 @@ To configure the number of slaves connected to the master device, make the follo
 
 ## 3 PPG Sensor
 ### 3.1 LED current
-Search for `setPulseAmplitude` in Arduino code.
+Search for `setPulseAmplitude` in Arduino code.  
 Adjust the parameters of these functions:
 ```cpp
 particleSensor.setPulseAmplitudeRed(0x80);
@@ -114,7 +114,7 @@ particleSensor.setPulseAmplitudeGreen(0xD0);
 For detailed information, refer to Page 20, Table 8 in the [MAX30101 datasheet](https://www.analog.com/media/en/technical-documentation/data-sheets/MAX30101.pdf).
 
 ### 3.2 LED Brightness
-Search for `ledBrightness` in Arduino code.
+Search for `ledBrightness` in Arduino code.  
 Adjust the value of ledBrightness:
 ```cpp
 byte ledBrightness = 0xFF;  //Options: 0=Off to 255=50mA
