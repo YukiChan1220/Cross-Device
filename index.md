@@ -33,9 +33,9 @@ Install and open the Arduino IDE.
 * Click the **Upload** icon (looks like **->**).
   
 ## 2 Multiple Slaves Configuration
-When using multiple slaves, both the master and slave programs need to be modified in the Arduino IDE and re-uploaded to their respective devices.
+When using multiple slaves, both the master and slave firmware programs need to be modified in the Arduino IDE and re-uploaded to their respective devices.
 ### 2.1 Configure Master Device
-To configure the number of slaves connected to the master device, make the following changes:
+To configure the number of slaves connected to the master device, make the following changes in **sensor_master**:
 * **Macros:**
   Define SS pins for each slave.
   ```cpp
@@ -88,6 +88,7 @@ To configure the number of slaves connected to the master device, make the follo
  Search for for `(int i = 0; i < 5; i++)` in the code, and change 5 to the actual number of slaves used.
 
 ### 2.2 Configure Slave Device
+Make the following changes in **sensor_sax**:
 * **Macros:**
   Ensure that the SS pin matches the one defined in the master code.
   ```cpp
@@ -119,6 +120,15 @@ Adjust the value of ledBrightness:
 ```cpp
 byte ledBrightness = 0xFF;  //Options: 0=Off to 255=50mA
 ```
+
+## 4 Data Collection
+### 4.1 Hardware Connection
+Ensure the hardware connection matches with the firmware program.  
+Connect the master device to the computer.  
+Change `PORT` in `receiver.py` to the actual port.
+### 4.2 Data Collection and Process
+Run `receiver.py`, press **Ctrl+C** to stop data collection.  
+Run `dataprocess.py`, it will process raw data and generate csvs in **./processed_data**.
 
 ## Report Problems
 To report any problems, [open an issue](https://github.com/YukiChan1220/Cross-Device/issues) or contact **SparcYuki** via Wechat.
