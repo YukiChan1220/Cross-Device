@@ -1,16 +1,16 @@
 # Cross-Device Configuration Manual
 ## 1 Environment Configuration
 ### 1.1 Device Connection
-* **Install USB Driver:**
+* **Install USB Driver:**  
   The device use CP2104 for USB-UART bridge.  
   Download and install **CP210x Universal Windows Driver** or **CP210x VCP Mac OSX Driver** [here](https://www.silabs.com/developer-tools/usb-to-uart-bridge-vcp-drivers?tab=downloads).  
   **Reboot the computer.**  
 
 * **Check Connection:**
-  - **Windows**
+  - **Windows**  
     Use **Micro USB** cable to connect the device to the computer.  
     Open **Device Manager**, extend **Ports (COM & LPT)**, look for **Silicon Labs CP210x USB to UART Bridge (COMn)**, in which **COMn** is the COM port.  
-  - **MacOS**
+  - **MacOS**  
     **Disconnect** the device with the computer.  
     Open **Terminal**, run `ls /dev/tty.*`.  
     Use **Micro USB** cable to commect the device to the computer.  
@@ -18,11 +18,11 @@
   
 ### 1.2 Arduino IDE Configuration
 Install and open the Arduino IDE.
-* **Board Management:**
+* **Board Management:**  
   Open **File**->**Preferences**, find **Additional boards manager URLs**, add `https://adafruit.github.io/arduino-board-index/package_adafruit_index.json`.  
   Open **BOARDS MANAGER** in the left slide, install the newest version of **Adafruit nRF52** by Adaruit.
 
-* **Library Management:**
+* **Library Management:**  
   Open **LIBRARY MANAGER** in the left slide, install the newest versions of **SparkFun MAX3010x Pulse and Proximity Sensor Library**, **Adafruit TMP117**, **SparkFun 9DoF IMU Breakout - ICM 20948 - Arduino Library**.
 
 ### 1.3 Program Upload
