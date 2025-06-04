@@ -3,7 +3,7 @@
 ### 1.1 Device Connection
 * **Install USB Driver:**
   The device use CP2104 for USB-UART bridge.
-  Download and install **CP210x Universal Windows Driver** or **CP210x VCP Mac OSX Driver** in https://www.silabs.com/developer-tools/usb-to-uart-bridge-vcp-drivers?tab=downloads.
+  Download and install **CP210x Universal Windows Driver** or **CP210x VCP Mac OSX Driver** [here](https://www.silabs.com/developer-tools/usb-to-uart-bridge-vcp-drivers?tab=downloads).
   **Reboot the computer.**
 
 * **Check Connection:**
@@ -111,8 +111,7 @@ particleSensor.setPulseAmplitudeRed(0x80);
 particleSensor.setPulseAmplitudeIR(0x80);
 particleSensor.setPulseAmplitudeGreen(0xD0);
 ```
-For detailed information, refer to Page 20, Table 8 in the MAX30101 datasheet:
-https://www.analog.com/media/en/technical-documentation/data-sheets/MAX30101.pdf
+For detailed information, refer to Page 20, Table 8 in the [MAX30101 datasheet](https://www.analog.com/media/en/technical-documentation/data-sheets/MAX30101.pdf).
 
 ### 3.2 LED Brightness
 Search for `ledBrightness` in Arduino code.
@@ -120,3 +119,6 @@ Adjust the value of ledBrightness:
 ```cpp
 byte ledBrightness = 0xFF;  //Options: 0=Off to 255=50mA
 ```
+
+## Report Problems
+To report any problems, [open an issue](https://github.com/YukiChan1220/Cross-Device/issues) or contact **SparcYuki** via Wechat.
