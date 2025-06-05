@@ -130,5 +130,33 @@ Change `PORT` in `receiver.py` to the actual port.
 Run `receiver.py`, press **Ctrl+C** to stop data collection.  
 Run `dataprocess.py`, it will process raw data and generate csvs in **./processed_data**.
 
+## 5 Debug
+Before debugging, always go with the **Checklist** according to the type of the problem. Always try **resetting and reconnecting** first.  
+### 5.1 Hardware Checklist
+* **USB Cable:** Connected to the master device. Try reconnecting.  
+* **FPC Cable:** Connected firmly; Not folded; Not broken; Not reversed.  
+* **PCB Boards:** No lighted LEDs. Try resetting.  
+* **FPC Boards:** PPG LEDs lighted.  
+* **Temperature:** No overheating (60^C or higher) anywhere.  
+
+### 5.2 Software Checklist
+* **File Location:** All software under the same folder.  
+
+### 5.3 Hardware debugging
+* **PPG LED not lighted; No output data from certain slave:**  
+  - Disconnect the USB cable from the master device.  
+  - Connect the USB cable to the faulty slave device.  
+  - Use Arduino IDE or any port monitoring software to check serial output. **Baudrate 115200**. Reset the slave if no serial output.  
+  - Look for any **ERROR** messages.  
+  - **If ERROR:** Replace the sensor FPC board and FPC cable with new ones.  
+  - **If NO OUTPUT:** Re-upload the slave firmware. Replace FPC board & cable.  
+* **No output data from the entire system:**
+  - Check the FPC cable between master and slave.  
+  - Connect the USB cable to the master device.  
+  - Use Arduino IDE or any port monitoring software to check serial output. **Baudrate 1000000**. Reset the master if no serial output.  
+  - Check if there's any output.  
+  - **If OUTPUT:** Input `s` and press enter; Wait for 3 sec; Then input `e` and press enter; Check the output for NaN count.  
+  - **If NO OUTPUT:** Re-upload the master firmware. Replace FPC cable.  
+
 ## Report Problems
 To report any problems, [open an issue](https://github.com/YukiChan1220/Cross-Device/issues) or contact **SparcYuki** via Wechat.
