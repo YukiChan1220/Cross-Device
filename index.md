@@ -2,21 +2,21 @@
 ## 1 Environment Configuration
 ### 1.1 Device Connection
 * **Install USB Driver:**  
-  The device use CP2104 for USB-UART bridge.  
-  Download and install **CP210x Universal Windows Driver** or **CP210x VCP Mac OSX Driver** [here](https://www.silabs.com/developer-tools/usb-to-uart-bridge-vcp-drivers?tab=downloads).  
-  **Reboot the computer.**  
+  - The device use CP2104 for USB-UART bridge.  
+  - Download and install **CP210x Universal Windows Driver** or **CP210x VCP Mac OSX Driver** [here](https://www.silabs.com/developer-tools/usb-to-uart-bridge-vcp-drivers?tab=downloads).  
+  - **Reboot the computer.**  
 
 * **Check Connection:**
   - **Windows**  
-    Use **Micro USB** cable to connect the device to the computer.  
-    Open **Device Manager**.  
-    Extend **Ports (COM & LPT)**.  
-    Look for **Silicon Labs CP210x USB to UART Bridge (COMn)**, in which **COMn** is the COM port.  
+    - Use **Micro USB** cable to connect the device to the computer.  
+    - Open **Device Manager**.  
+    - Extend **Ports (COM & LPT)**.  
+    - Look for **Silicon Labs CP210x USB to UART Bridge (COMn)**, in which **COMn** is the COM port.  
   - **MacOS**  
-    **Disconnect** the device with the computer.  
-    Open **Terminal**, run `ls /dev/tty.*`.  
-    Use **Micro USB** cable to connect the device to the computer.  
-    Run `ls /dev/tty.*` again, look for new devices like **/dev/tty.SLAB_USBtoUART**, which is the COM port.  
+    - **Disconnect** the device with the computer.  
+    - Open **Terminal**, run `ls /dev/tty.*`.  
+    - Use **Micro USB** cable to connect the device to the computer.  
+    - Run `ls /dev/tty.*` again, look for new devices like **/dev/tty.SLAB_USBtoUART**, which is the COM port.  
   
 ### 1.2 Arduino IDE Configuration
 Install and open the Arduino IDE.
@@ -110,8 +110,8 @@ Make the following changes in **sensor_sax**:
 ## 3 Sensors
 ### 3.1 PPG Sensor
 #### 3.1.1 LED current
-Search for `setPulseAmplitude` in Arduino code.  
-Adjust the parameters of these functions:
+- Search for `setPulseAmplitude` in Arduino code.  
+- Adjust the parameters of these functions:
 ```cpp
 particleSensor.setPulseAmplitudeRed(0x80);
 particleSensor.setPulseAmplitudeIR(0x80);
@@ -120,8 +120,8 @@ particleSensor.setPulseAmplitudeGreen(0xD0);
 For detailed information, refer to Page 20, Table 8 in the [MAX30101 datasheet](https://www.analog.com/media/en/technical-documentation/data-sheets/MAX30101.pdf).
 
 #### 3.1.2 LED Brightness
-Search for `ledBrightness` in Arduino code.  
-Adjust the value of ledBrightness:
+- Search for `ledBrightness` in Arduino code.  
+- Adjust the value of ledBrightness:
 ```cpp
 byte ledBrightness = 0xFF;  //Options: 0=Off to 255=50mA
 ```
@@ -130,7 +130,8 @@ byte ledBrightness = 0xFF;  //Options: 0=Off to 255=50mA
 ### 4.1 Hardware Connection
 * Ensure the hardware connection matches with the firmware program.  
 * Connect the master device to the computer.  
-* Change `PORT` in `receiver.py` to the actual port.
+* Change `PORT` in `receiver.py` to the actual port.  
+
 ### 4.2 Data Collection and Process
 * Run `receiver.py`, press **Ctrl+C** to stop data collection.  
 * Run `dataprocess.py`, it will process raw data and generate csvs in **./processed_data**.
@@ -146,7 +147,8 @@ byte ledBrightness = 0xFF;  //Options: 0=Off to 255=50mA
 * **FPC Cable:** The white or silver, soft, flexible, thin cable.
 * **Master device:** The PCB board with only 1 FPC cable connected to it. Usually labeled `MASTER`.
 * **Slave device:** The PCB board with 2 FPC cables connected to it. Usually labeled `1`, `2`, etc.
-* **Interface board:** The PCB board with multiple FPC cables connected to it.
+* **Interface board:** The PCB board with multiple FPC cables connected to it.  
+
 ### 5.1 Hardware Checklist
 * **USB Cable:** Connected to the master device. Try reconnecting.  
 * **FPC Cable:** Connected firmly; Not folded; Not broken; Not reversed.  
